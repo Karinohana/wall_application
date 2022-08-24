@@ -1,6 +1,6 @@
 # Wall Application
 
-## Note this project requires pipenv and python3.8 or greater.
+## Note this project requires pipenv and python3.8 or greater. Make sure you have mysql running.
 
 - Run `pipenv install` & `npm install`
 - Run the command `mysql -u [username] -p -e "create database example"`
