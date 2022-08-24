@@ -1,9 +1,6 @@
 import { set } from "react-hook-form";
 
 const getState = ({ getStore, getActions, setStore }) => {
-  const backendUrl =
-    "https://3000-karinohana-tslwallappba-0molsmrwpd7.ws-us60.gitpod.io";
-
   return {
     store: {
       user: {},
@@ -14,7 +11,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       getPosts: async () => {
         const store = getStore();
 
-        fetch(backendUrl + "/posts")
+        fetch(process.env.BACKEND_URL + "/posts")
           .then((resp) => resp.json())
           .then((data) => {
             console.log(data.all_posts);
@@ -40,7 +37,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           }),
         };
 
-        fetch(backendUrl + "/create_post", requestOptions)
+        fetch(process.env.BACKEND_URL + "/create_post", requestOptions)
           .then((response) => response.json())
           .then((result) => {
             const newArray = store.posts.concat([result.post]);
@@ -63,7 +60,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           }),
         };
 
-        fetch(backendUrl + "/register", requestOptions)
+        fetch(process.env.BACKEND_URL + "/register", requestOptions)
           .then((res) => {
             res.json();
           })
@@ -86,7 +83,10 @@ const getState = ({ getStore, getActions, setStore }) => {
           }),
         };
 
-        let resp = await fetch(backendUrl + "/login", requestOptions);
+        let resp = await fetch(
+          process.env.BACKEND_URL + "/login",
+          requestOptions
+        );
         if (resp.status === 200) {
           try {
             let data = await resp.json();

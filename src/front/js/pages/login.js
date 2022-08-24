@@ -8,7 +8,7 @@ import { useEffect } from "react";
 export const Login = (props) => {
   const { store, actions } = useContext(Context);
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [loginData, setLoginData] = useState({
     email: "",
@@ -24,7 +24,7 @@ export const Login = (props) => {
   const onSubmit = async (data) => {
     let loginStatus = await actions.login(data);
     if (loginStatus == true) {
-      Navigate("/wall");
+      navigate("/wall");
     } else {
       console.log("login was not successfull");
     }
