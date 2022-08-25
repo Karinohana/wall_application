@@ -1,8 +1,8 @@
 import os
 import unittest
 import json
-from ..models import db, User, Posts
-from .base import TestWrapper
+from src.api.models import db, User, Posts
+from src.test.base import TestWrapper
 
 
 class TestUser(TestWrapper):

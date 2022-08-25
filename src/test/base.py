@@ -1,7 +1,7 @@
 import unittest
 import os
-from ..main import app
-from ..models import db
+from src.app import app
+from src.api.models import db
 
 TEST_DB = os.getcwd() + '/test.db'
 

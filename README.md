@@ -8,3 +8,4 @@
 - Run `pipenv run upgrade`
 - Run `pipenv run start` and `npm run start` in seperate terminals
 - Open browser Localhost:3000 to view application
+- To run tests `pipenv run test`
